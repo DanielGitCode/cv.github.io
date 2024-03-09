@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Guevara CV</title>
+    <style>[x-cloak]{display:none}</style>
+    <!-- <script src="https://unpkg.com/alpinejs" defer></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="bg-blue-700">
+
+<div class="lg:grid lg:grid-cols-12 lg:gap-x-8 bg-gray-100">
+
+    <div
+        class="lg:col-span-4 print:lg:col-span-12 bg-black bg-gradient-to-tl from-blue-900 to-black ">
+
+        <div class="lg:fixed lg:w-1/3 print:hidden">
+            <div class="profile"></div>
+        </div>
+
+        <div class="hidden print:block">
+            <div class="profile"></div>
+        </div>
+
+    </div>
+
+
+    <div class="mt-6 lg:col-span-8 print:lg:col-span-12 lg:pr-20 lg:ml-0 lg:mr-2 ml-5 mr-5">
+
+        <button type="button"
+                class="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:text-gray-600 float-right hidden lg:block"
+                onclick="toggleFullscreen()">
+            <i class="fa-solid fa-up-right-and-down-left-from-center">
+                Enter full screen
+            </i>
+        </button>
+
+        <div id="cv">
+        <h3 class="text-2xl font-thin text-gray-600 mt-5 my-10">Experience:</h3>
+        <div id="work1"></div>
+        <div id="work2"></div>
+        <div id="work3"></div>
+        <div id="work4"></div>
+        <h3 class="text-2xl font-thin text-gray-600 my-7">Studies:</h3>
+        <div id="education"></div>
+        <h3 class="text-2xl font-thin text-gray-600 my-7">Skills:</h3>
+        <div id="skills"></div>
+        </div>
+
+        <div id="portfolio"></div>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    runWebPage();
+    function runWebPage(){
+        $('#portfolio').hide();
+    }
+
+    function togglePortfolio() {
+        $('#portfolio').toggle();
+        $('#cv').toggle();
+    }
+
+
+    function toggleFullscreen() {
+        if (!document.fullscreenElement &&
+            !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement &&
+            !document.msFullscreenElement) {
+
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            }
+
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+
+    $(document).ready(function() {
+        $('.profile').load('profile.html');
+        $('#work1').load('work1.html');
+        $('#work2').load('work2.html');
+        $('#work3').load('work3.html');
+        $('#work4').load('work4.html');
+        $('#work5').load('work5.html');
+        $('#education').load('education.html');
+        $('#skills').load('skills.html');
+    });
+
+</script>
+</body>
+</html>
