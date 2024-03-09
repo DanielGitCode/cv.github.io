@@ -1,4 +1,4 @@
-Daniel Guevara || Curriculum vitae
+Daniel Guevara, CV
 
-## Copyright Design
+## Copyrights
 Daniel Guevara 2024 
