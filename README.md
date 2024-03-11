@@ -1,4 +1,4 @@
 Daniel Guevara, CV
 
-## Copyrights
+## FrontEnd CV Copyrights
 Daniel Guevara 2024 
